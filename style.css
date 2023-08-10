@@ -117,13 +117,14 @@ img {
     display: flex;
 }
 .r-container {
-    color: hsl(10, 10%, 10%);
+    color: rgba(48, 59, 90, 1);
 }
 .r-container span {
     display: inline;
-    color: hsla(10, 10%, 10%, 0.5);
+    color: rgba(48, 59, 90, 0.5);
 }
 .button {
+    position: relative;
     text-decoration: none;
     text-align: center;
     color: white;
@@ -131,5 +132,24 @@ img {
     font-size: 18px;
     border: none;
     border-radius: 40px;
-    background: hsl(224, 30%, 27%);
+    background: rgba(48, 59, 90, 1);
+    transition: background 0.2s linear;
+}
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        hsl(241, 81%, 54%) 15%,
+        hsl(252, 100%, 67%) 87%
+    );
+    border-radius: 40px;
+    z-index: -1;
+}
+.button:hover {
+    background: rgba(48, 59, 90, 0)
 }
